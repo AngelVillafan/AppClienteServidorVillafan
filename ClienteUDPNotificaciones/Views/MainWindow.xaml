@@ -1,0 +1,68 @@
+﻿<Window x:Class="ClienteUDPNotificaciones.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClienteUDPNotificaciones"
+        xmlns:vm="clr-namespace:ClienteUDPNotificaciones.ViewModels"
+        mc:Ignorable="d"
+        Title="Envio de mensajes" Height="350" Width="450">
+    <Window.DataContext>
+        <vm:MensajeViewModel></vm:MensajeViewModel>
+    </Window.DataContext>
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="BorderBrush" Value="#406b6d"></Setter>
+            <Setter Property="BorderThickness" Value="2"></Setter>
+            <Setter Property="Margin" Value="0 0 10 0"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="152*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0"
+                Background="LightBlue"
+                BorderThickness="2.5"
+                SnapsToDevicePixels="True"
+                BorderBrush="CadetBlue">
+            <TextBlock FontFamily="Verdana"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="30"
+                       Foreground="#406b6d">Envia una notificación</TextBlock>
+        </Border>
+        <DockPanel Grid.Row="1">
+            
+            <DockPanel Margin="2 30 2 20"
+                       DockPanel.Dock="Top">
+                <Label DockPanel.Dock="Left"
+                       Width="75">Titulo:</Label>
+                <TextBox Text="{Binding Noti.Titulo}"></TextBox>
+            </DockPanel>
+
+            <DockPanel Margin="2"
+                       DockPanel.Dock="Top">
+                <Label DockPanel.Dock="Left"
+                       Width="75">Mensaje:</Label>
+                <TextBox Text="{Binding Noti.Mensaje}"></TextBox>
+            </DockPanel>
+            <TextBlock DockPanel.Dock="Bottom"
+                       Foreground="Crimson"
+                       FontWeight="SemiBold"
+                       FontSize="14"
+                       Text="{Binding Error}"></TextBlock>
+            <Grid>
+                <Button Padding="30 9"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Background="LightBlue"
+                        BorderBrush="#406b6d"
+                        BorderThickness="3"
+                        Command="{Binding EnviarCommand}">Enviar</Button>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>
