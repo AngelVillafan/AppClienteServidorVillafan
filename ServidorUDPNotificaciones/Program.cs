@@ -19,27 +19,5 @@ namespace ServidorUDPNotificaciones
 
         
     }
-    //public class MyCustomApplicationContext : ApplicationContext
-    //{
-    //    private NotifyIcon trayIcon;
-
-    //    public MyCustomApplicationContext()
-    //    {
-    //        trayIcon = new NotifyIcon()
-    //        {
-    //            Icon = ,
-    //            ContextMenuStrip = new ContextMenuStrip()
-    //            {
-    //                Items = { new ToolStripMenuItem("Exit", null, Exit) }
-    //            },
-    //            Visible = true
-    //        };
-    //    }
-
-    //    void Exit(object? sender, EventArgs e)
-    //    {
-    //        trayIcon.Visible = false;
-    //        Application.Exit();
-    //    }
-    //}
+    
 }

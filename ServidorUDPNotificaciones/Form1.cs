@@ -44,25 +44,6 @@ namespace ServidorUDPNotificaciones
                 }
 
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
-
-
     }
 }
