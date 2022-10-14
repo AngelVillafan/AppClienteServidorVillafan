@@ -37,10 +37,7 @@ namespace ServidorUDPNotificaciones
                         Titulo = json.Titulo,
                         Mensaje = json.Mensaje
                     };
-                    new ToastContentBuilder()
-                        .AddAppLogoOverride(new Uri("ms-appdata:///local/Andrew.jpg"), ToastGenericAppLogoCrop.Circle)
-                        .AddArgument("action", "viewConversation")
-                        .AddArgument("conversationId", 9813)
+                    new ToastContentBuilder()                       
                        .AddText(noti.Titulo)
                        .AddText(noti.Mensaje)
                        .Show();
